@@ -2,10 +2,10 @@
 # Airline Bookig
 
 ## NOTE :
-**1. We have to use only pointers**
-**2. Nested Array Of Structures to be used**
-**3.File Handling to be done after first review. (If needed we will do it before hand).**
-**4.Use only Functions**
+* **We have to use only pointers**
+* **Nested Array Of Structures to be used**
+* **File Handling to be done after first review. (If needed we will do it before hand).**
+* **Use only Functions**
 
 ### Customer Login
 * Use File Handling for customer Details
