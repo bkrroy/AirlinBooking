@@ -25,7 +25,7 @@
 #define VISTARA "Vistara"
 // End of details of flight companies
 
-// The following Structure contains the information of different Airports 
+// The following Structure contains the information of different Airports
 // It contains the information of Arrival and Departure of From one airport to Another Airport
 struct AirportPaths{
     char *departure;
@@ -38,7 +38,7 @@ struct FlightDetails{
     char *flightCode; // To give the code of the fligh
     char *departurTime; // contains the departure time of flight
     char *arrivalTime;// contains the arrival time of flight
-    char *flightDuration; // contains flight duration 
+    char *flightDuration; // contains flight duration
     float initialFlightCost; // Displays the initial flight cost --> without any charges of food or anything similar to that
 };
 
@@ -61,7 +61,7 @@ void delhi_mumbai(){
     // Array to store flight details for delhi to mumbai
     struct FlightDetails numberofFlights[MAXFLIGHTSDEDMUM];
 
-            // For the first flight 
+            // For the first flight
     numberofFlights[0].company = strdup(INDIGO);
     numberofFlights[0].flightCode = strdup("ABCDEF");
     numberofFlights[0].departurTime = strdup("08:20");
@@ -82,6 +82,84 @@ void delhi_mumbai(){
         printFlightDetails(numberofFlights + i);
 }
 
+// This function would contain different flight details from delhi to kolkata
+void delhi_kolkata(){
+    // Array to store flight details for delhi to kolkata
+    struct FlightDetails numberofFlights[MAXROUTES];
+
+            // For the first flight
+    numberofFlights[0].company = strdup(INDIGO);
+    numberofFlights[0].flightCode = strdup("PQRST");
+    numberofFlights[0].departurTime = strdup("18:00");
+    numberofFlights[0].arrivalTime = strdup("22:45");
+    numberofFlights[0].flightDuration = strdup("4h 45m");
+    numberofFlights[0].initialFlightCost = 3760;
+
+            // For the second flight
+    numberofFlights[1].company = strdup(SPICEJET);
+    numberofFlights[1].flightCode = strdup("UVWXY");
+    numberofFlights[1].departurTime = strdup("8:50");
+    numberofFlights[1].arrivalTime = strdup("18:20");
+    numberofFlights[1].flightDuration = strdup("9h 30m");
+    numberofFlights[1].initialFlightCost = 5750;
+
+    // Calling the function to print the details of the flights
+    for(int i = 0; i<MAXROUTES; i++)
+        printFlightDetails(numberofFlights + i);
+}
+
+// This function would contain different flight details from delhi to bangalore
+void delhi_bangalore(){
+    // Array to store flight details for delhi to bangalore
+    struct FlightDetails numberofFlights[MAXROUTES];
+
+            // For the first flight
+    numberofFlights[0].company = strdup(INDIGO);
+    numberofFlights[0].flightCode = strdup("LMNOP");
+    numberofFlights[0].departurTime = strdup("11:00");
+    numberofFlights[0].arrivalTime = strdup("16:00");
+    numberofFlights[0].flightDuration = strdup("5h 00m");
+    numberofFlights[0].initialFlightCost = 4650;
+
+            // For the second flight
+    numberofFlights[1].company = strdup(VISTARA);
+    numberofFlights[1].flightCode = strdup("ACEGI");
+    numberofFlights[1].departurTime = strdup("12:30");
+    numberofFlights[1].arrivalTime = strdup("15:15");
+    numberofFlights[1].flightDuration = strdup("2h 45m");
+    numberofFlights[1].initialFlightCost = 5000;
+
+    // Calling the function to print the details of the flights
+    for(int i = 0; i<MAXROUTES; i++)
+        printFlightDetails(numberofFlights + i);
+}
+
+// This function would contain different flight details from delhi to chennai
+void delhi_chennai(){
+    // Array to store flight details for delhi to chennai
+    struct FlightDetails numberofFlights[MAXROUTES];
+
+            // For the first flight
+    numberofFlights[0].company = strdup(AIRINDIA);
+    numberofFlights[0].flightCode = strdup("BDFHJ");
+    numberofFlights[0].departurTime = strdup("10:00");
+    numberofFlights[0].arrivalTime = strdup("12:55");
+    numberofFlights[0].flightDuration = strdup("2h 55m");
+    numberofFlights[0].initialFlightCost = 5000;
+
+            // For the second flight
+    numberofFlights[1].company = strdup(SPICEJET);
+    numberofFlights[1].flightCode = strdup("KMOQS");
+    numberofFlights[1].departurTime = strdup("17:45");
+    numberofFlights[1].arrivalTime = strdup("20:30");
+    numberofFlights[1].flightDuration = strdup("2h 45m");
+    numberofFlights[1].initialFlightCost = 5000;
+
+    // Calling the function to print the details of the flights
+    for(int i = 0; i<MAXROUTES; i++)
+        printFlightDetails(numberofFlights + i);
+}
+
 void airPortDetails(){
     giveValuestoPath();
     for(int i = 0; i<MAXROUTES; i++){
@@ -94,7 +172,7 @@ void airPortDetails(){
 
 // Function to print the flight details
 void printFlightDetails(struct FlightDetails *flghtDetail){
-    
+
     printf("Airline : %s\t\t\t", flghtDetail->company);
     printf("Flight Code : %s\n", flghtDetail->flightCode);
     printf("Deparure : %s\t", flghtDetail->departurTime);
