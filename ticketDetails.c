@@ -17,3 +17,12 @@ int food_option()
 			return 0;
 	}
 }
+
+//to select the option for carrying additional luggage
+int add_luggage()
+{
+    int lug;
+    printf("\nEnter the amount additional luggage(in Kg):\n");
+    scanf("%d",&lug);
+    return (400*lug);
+}
