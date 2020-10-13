@@ -2,7 +2,7 @@
 #include<string.h>
 // MAXROUTES defines  the number of possible routes the airline reservation is taking
 // This is hardcoded
-#define MAXROUTES 8
+#define MAXROUTES 10
 
 #define MAXFLIGHTSDELMUM 2 // maximum flight details from Delhi to mumbai
 #define MAXFLIGHTSDELCAL 2 // maximum flight details from Delhi to Calcutta
@@ -12,17 +12,14 @@
 #define MAXFLIGHTSMUMCAL 2 // maximum flight details from Mumbai to Calcutta
 #define MAXFLIGHTSMUMBLR 2 // maximum flight details from Mumbai to Bangalore
 #define MAXFLIGHTSMUMMAA 2 // maximum flight details from Mumbai to Chennai
-
+#define MAXFLIGHTSMAABLR 2 // max flight details from chennai to bangalore
+#define MAXFLIGHTSMAAMUM 2 // max flight details from chennai to mumbai
 // contants to define cities
 #define DEL "DEL" // Delhi city
 #define MUM "MUM" // Mumbai city
 #define CAL "CAL" // Calcuta city
-#define AMD "AMD" // Ahmedabad city
 #define BLR "BLR" // Banglore city
-#define AMR "AMR" // Amritsar city
-#define CAN "CAN" // Chandigarh city
 #define MAA "MAA" // Chennai City
-#define PAT "PAT" // Patna city
 // Currently we have taken only famous cities
 
 
@@ -80,9 +77,15 @@ void giveValuestoPath(){
     
     numberOfRoutes[7].departure = strdup(MUM);
     numberOfRoutes[7].arrival = strdup(MAA);
+
+    numberOfRoutes[8].departure = strdup(MAA);
+    numberOfRoutes[8].arrival = strdup(BLR);
+
+    numberOfRoutes[9].departure = strdup(MAA);
+    numberOfRoutes[9].arrival = strdup(MUM);
 }
 
-// This function would contain different flight details from delhi to mumbai
+// 1. This function would contain different flight details from delhi to mumbai
 void delhi_mumbai(){
     // Array to store flight details for delhi to mumbai
     int i;
@@ -109,7 +112,7 @@ void delhi_mumbai(){
         printFlightDetails(numberofFlights + i);
 }
 
-// This function would contain different flight details from delhi to kolkata
+// 2. This function would contain different flight details from delhi to kolkata
 void delhi_kolkata(){
     // Array to store flight details for delhi to kolkata
     struct FlightDetails numberofFlights[MAXFLIGHTSDELCAL];
@@ -136,7 +139,7 @@ void delhi_kolkata(){
         printFlightDetails(numberofFlights + i);
 }
 
-// This function would contain different flight details from delhi to bangalore
+// 3. This function would contain different flight details from delhi to bangalore
 void delhi_bangalore(){
     // Array to store flight details for delhi to bangalore
     struct FlightDetails numberofFlights[MAXFLIGHTSDELBLR];
@@ -163,7 +166,7 @@ void delhi_bangalore(){
         printFlightDetails(numberofFlights + i);
 }
 
-// This function would contain different flight details from delhi to chennai
+// 4. This function would contain different flight details from delhi to chennai
 void delhi_chennai(){
     // Array to store flight details for delhi to chennai
     int i;
@@ -190,7 +193,7 @@ void delhi_chennai(){
         printFlightDetails(numberofFlights + i);
 }
 
-// This function would contain different flight details from mumbai to delhi
+// 5. This function would contain different flight details from mumbai to delhi
 void mumbai_delhi(){
     // Array to store flight details for mumbai to delhi
     int i;
@@ -217,7 +220,7 @@ void mumbai_delhi(){
         printFlightDetails(numberofFlights + i);
 }
 
-// This function would contain different flight details from mumbai to kolkata
+// 6. This function would contain different flight details from mumbai to kolkata
 void mumbai_kolkata(){
     // Array to store flight details for mumbai to kolkata
     struct FlightDetails numberofFlights[MAXFLIGHTSMUMCAL];
@@ -244,7 +247,7 @@ void mumbai_kolkata(){
         printFlightDetails(numberofFlights + i);
 }
 
-// This function would contain different flight details from mumbai to bangalore
+// 7. This function would contain different flight details from mumbai to bangalore
 void mumbai_bangalore(){
     // Array to store flight details for mumbai to bangalore
     struct FlightDetails numberofFlights[MAXFLIGHTSMUMBLR];
@@ -271,7 +274,7 @@ void mumbai_bangalore(){
         printFlightDetails(numberofFlights + i);
 }
 
-// This function would contain different flight details from mumbai to chennai
+// 8. This function would contain different flight details from mumbai to chennai
 void mumbai_chennai(){
     // Array to store flight details for mumbai to chennai
     int i;
@@ -297,6 +300,55 @@ void mumbai_chennai(){
     for(i = 0; i<MAXFLIGHTSMUMMAA; i++)
         printFlightDetails(numberofFlights + i);
 }
+
+// 9. flight details from chennai to bangalore
+void chennai_banglore(){
+        struct FlightDetails numberofFlights[MAXFLIGHTSMAABLR];
+        // For the first flight
+    numberofFlights[0].company = strdup(INDIGO);
+    numberofFlights[0].flightCode = strdup("INDQQQ");
+    numberofFlights[0].departurTime = strdup("10:45");
+    numberofFlights[0].arrivalTime = strdup("12:00");
+    numberofFlights[0].flightDuration = strdup("1h 15m");
+    numberofFlights[0].initialFlightCost = 3246;
+
+        // For the second flight
+    numberofFlights[1].company = strdup(SPICEJET);
+    numberofFlights[1].flightCode = strdup("JETRSU");
+    numberofFlights[1].departurTime = strdup("15:15");
+    numberofFlights[1].arrivalTime = strdup("17:00");
+    numberofFlights[1].flightDuration = strdup("1h 45m");
+    numberofFlights[1].initialFlightCost = 3020;
+    
+    // calling the function to print the details of the flight
+    for(int i = 0; i<MAXFLIGHTSMAABLR; i++)
+        printFlightDetails(numberofFlights + i);
+}
+
+// 10. Flight Details from chennai to mumbai
+void chennai_mumbai(){
+        struct FlightDetails numberofFlights[MAXFLIGHTSMAAMUM];
+        // For the first flight
+    numberofFlights[0].company = strdup(AIRINDIA);
+    numberofFlights[0].flightCode = strdup("AIRQQQ");
+    numberofFlights[0].departurTime = strdup("20:30");
+    numberofFlights[0].arrivalTime = strdup("23:30");
+    numberofFlights[0].flightDuration = strdup("3h 30m");
+    numberofFlights[0].initialFlightCost = 3546;
+
+        // For the second flight
+    numberofFlights[1].company = strdup(VISTARA);
+    numberofFlights[1].flightCode = strdup("ARAQWE");
+    numberofFlights[1].departurTime = strdup("15:15");
+    numberofFlights[1].arrivalTime = strdup("17:00");
+    numberofFlights[1].flightDuration = strdup("1h 45m");
+    numberofFlights[1].initialFlightCost = 3320;
+    
+    // calling the function to print the details of the flight
+    for(int i = 0; i<MAXFLIGHTSMAAMUM; i++)
+        printFlightDetails(numberofFlights + i);
+}
+
 
 //currently displays all stored information
 void airPortDetails(){	
@@ -332,6 +384,16 @@ void airPortDetails(){
 	printf("Departure : %s\t\t", numberOfRoutes[7].departure);
     printf("Arrival : %s\n\n", numberOfRoutes[7].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
 	mumbai_chennai();
+	printf("--------------------------------------------------------------------------\n");
+
+        printf("Departure : %s\t\t", numberOfRoutes[8].departure);
+    printf("Arrival : %s\n\n", numberOfRoutes[8].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
+	chennai_banglore();
+	printf("--------------------------------------------------------------------------\n");
+
+        printf("Departure : %s\t\t", numberOfRoutes[9].departure);
+    printf("Arrival : %s\n\n", numberOfRoutes[9].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
+	chennai_mumbai();
 	printf("--------------------------------------------------------------------------\n");
 }
 
