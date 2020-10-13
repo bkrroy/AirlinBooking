@@ -2,8 +2,9 @@
 // Required Files to run the first Information about Airports
 #include<stdio.h>
 #include "airportDetails.c"
-
+#include "ticketDetails.c"
 int main(){
     airPortDetails();
+    printf("Amount added to ticket:%d\n",food_option());
     return 0;
 }
