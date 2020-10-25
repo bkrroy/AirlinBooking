@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<string.h>
+#include "ticketDetails.c"
+#include "seatBooking.c"
 // MAXROUTES defines  the number of possible routes the airline reservation is taking
 // This is hardcoded
 #define MAXROUTES 10
@@ -30,6 +32,9 @@
 #define VISTARA "Vistara"
 // End of details of flight companies
 
+// Will Store the final price of the items
+float price = 0.0;
+
 // The following Structure contains the information of different Airports
 // It contains the information of Arrival and Departure of From one airport to Another Airport
 struct AirportPaths{
@@ -52,6 +57,7 @@ struct FlightDetails{
 struct AirportPaths numberOfRoutes[MAXROUTES];
 
 void printFlightDetails(struct FlightDetails *FlightDetails);
+void print_routeDetails();
 
 void giveValuestoPath(){
     numberOfRoutes[0].departure = strdup(DEL);
@@ -86,7 +92,7 @@ void giveValuestoPath(){
 }
 
 // 1. This function would contain different flight details from delhi to mumbai
-void delhi_mumbai(){
+int delhi_mumbai(){
     // Array to store flight details for delhi to mumbai
     int i;
     struct FlightDetails numberofFlights[MAXFLIGHTSDELMUM];
@@ -110,10 +116,20 @@ void delhi_mumbai(){
     // Calling the function to print the details of the flights
     for(i = 0; i<MAXFLIGHTSDELMUM; i++)
         printFlightDetails(numberofFlights + i);
+
+        int chosenFlight;
+        printf("Enter the Chosen flight : ");
+        scanf("%d",&chosenFlight);
+
+        if(chosenFlight == 1)
+                return numberofFlights[0].initialFlightCost;
+        else
+                return numberofFlights[1].initialFlightCost;
+
 }
 
 // 2. This function would contain different flight details from delhi to kolkata
-void delhi_kolkata(){
+int delhi_kolkata(){
     // Array to store flight details for delhi to kolkata
     struct FlightDetails numberofFlights[MAXFLIGHTSDELCAL];
 
@@ -137,10 +153,21 @@ void delhi_kolkata(){
     int i;
     for(i = 0; i<MAXFLIGHTSDELCAL; i++)
         printFlightDetails(numberofFlights + i);
+
+
+
+        int chosenFlight;
+        printf("Enter the Chosen flight : ");
+        scanf("%d",&chosenFlight);
+
+        if(chosenFlight == 1)
+                return numberofFlights[0].initialFlightCost;
+        else
+                return numberofFlights[1].initialFlightCost;
 }
 
 // 3. This function would contain different flight details from delhi to bangalore
-void delhi_bangalore(){
+int delhi_bangalore(){
     // Array to store flight details for delhi to bangalore
     struct FlightDetails numberofFlights[MAXFLIGHTSDELBLR];
 
@@ -164,10 +191,19 @@ void delhi_bangalore(){
     int i;
     for(i = 0; i<MAXFLIGHTSDELBLR; i++)
         printFlightDetails(numberofFlights + i);
+
+        int chosenFlight;
+        printf("Enter the Chosen flight : ");
+        scanf("%d",&chosenFlight);
+
+        if(chosenFlight == 1)
+                return numberofFlights[0].initialFlightCost;
+        else
+                return numberofFlights[1].initialFlightCost;
 }
 
 // 4. This function would contain different flight details from delhi to chennai
-void delhi_chennai(){
+int delhi_chennai(){
     // Array to store flight details for delhi to chennai
     int i;
     struct FlightDetails numberofFlights[MAXFLIGHTSDELMAA];
@@ -191,10 +227,20 @@ void delhi_chennai(){
     // Calling the function to print the details of the flights
     for(i = 0; i<MAXFLIGHTSDELMAA; i++)
         printFlightDetails(numberofFlights + i);
+
+
+        int chosenFlight;
+        printf("Enter the Chosen flight : ");
+        scanf("%d",&chosenFlight);
+
+        if(chosenFlight == 1)
+                return numberofFlights[0].initialFlightCost;
+        else
+                return numberofFlights[1].initialFlightCost;
 }
 
 // 5. This function would contain different flight details from mumbai to delhi
-void mumbai_delhi(){
+int mumbai_delhi(){
     // Array to store flight details for mumbai to delhi
     int i;
     struct FlightDetails numberofFlights[MAXFLIGHTSMUMDEL];
@@ -217,11 +263,20 @@ void mumbai_delhi(){
 
     // Calling the function to print the details of the flights
     for(i = 0; i<MAXFLIGHTSMUMDEL; i++)
-        printFlightDetails(numberofFlights + i);
+        printFlightDetails(numberofFlights + i);\
+
+        int chosenFlight;
+        printf("Enter the Chosen flight : ");
+        scanf("%d",&chosenFlight);
+
+        if(chosenFlight == 1)
+                return numberofFlights[0].initialFlightCost;
+        else
+                return numberofFlights[1].initialFlightCost;
 }
 
 // 6. This function would contain different flight details from mumbai to kolkata
-void mumbai_kolkata(){
+int mumbai_kolkata(){
     // Array to store flight details for mumbai to kolkata
     struct FlightDetails numberofFlights[MAXFLIGHTSMUMCAL];
 
@@ -245,10 +300,19 @@ void mumbai_kolkata(){
     int i;
     for(i = 0; i<MAXFLIGHTSMUMCAL; i++)
         printFlightDetails(numberofFlights + i);
+
+        int chosenFlight;
+        printf("Enter the Chosen flight : ");
+        scanf("%d",&chosenFlight);
+
+        if(chosenFlight == 1)
+                return numberofFlights[0].initialFlightCost;
+        else
+                return numberofFlights[1].initialFlightCost;
 }
 
 // 7. This function would contain different flight details from mumbai to bangalore
-void mumbai_bangalore(){
+int mumbai_bangalore(){
     // Array to store flight details for mumbai to bangalore
     struct FlightDetails numberofFlights[MAXFLIGHTSMUMBLR];
 
@@ -272,10 +336,20 @@ void mumbai_bangalore(){
     int i;
     for(i = 0; i<MAXFLIGHTSMUMBLR; i++)
         printFlightDetails(numberofFlights + i);
+
+
+        int chosenFlight;
+        printf("Enter the Chosen flight : ");
+        scanf("%d",&chosenFlight);
+
+        if(chosenFlight == 1)
+                return numberofFlights[0].initialFlightCost;
+        else
+                return numberofFlights[1].initialFlightCost;
 }
 
 // 8. This function would contain different flight details from mumbai to chennai
-void mumbai_chennai(){
+int mumbai_chennai(){
     // Array to store flight details for mumbai to chennai
     int i;
     struct FlightDetails numberofFlights[MAXFLIGHTSMUMMAA];
@@ -299,10 +373,20 @@ void mumbai_chennai(){
     // Calling the function to print the details of the flights
     for(i = 0; i<MAXFLIGHTSMUMMAA; i++)
         printFlightDetails(numberofFlights + i);
+
+
+        int chosenFlight;
+        printf("Enter the Chosen flight : ");
+        scanf("%d",&chosenFlight);
+
+        if(chosenFlight == 1)
+                return numberofFlights[0].initialFlightCost;
+        else
+                return numberofFlights[1].initialFlightCost;
 }
 
 // 9. flight details from chennai to bangalore
-void chennai_banglore(){
+int chennai_banglore(){
         struct FlightDetails numberofFlights[MAXFLIGHTSMAABLR];
         // For the first flight
     numberofFlights[0].company = strdup(INDIGO);
@@ -323,10 +407,20 @@ void chennai_banglore(){
     // calling the function to print the details of the flight
     for(int i = 0; i<MAXFLIGHTSMAABLR; i++)
         printFlightDetails(numberofFlights + i);
+
+
+        int chosenFlight;
+        printf("Enter the Chosen flight : ");
+        scanf("%d",&chosenFlight);
+
+        if(chosenFlight == 1)
+                return numberofFlights[0].initialFlightCost;
+        else
+                return numberofFlights[1].initialFlightCost;
 }
 
 // 10. Flight Details from chennai to mumbai
-void chennai_mumbai(){
+int chennai_mumbai(){
         struct FlightDetails numberofFlights[MAXFLIGHTSMAAMUM];
         // For the first flight
     numberofFlights[0].company = strdup(AIRINDIA);
@@ -347,62 +441,76 @@ void chennai_mumbai(){
     // calling the function to print the details of the flight
     for(int i = 0; i<MAXFLIGHTSMAAMUM; i++)
         printFlightDetails(numberofFlights + i);
+
+
+        int chosenFlight;
+        printf("Enter the Chosen flight : ");
+        scanf("%d",&chosenFlight);
+
+        if(chosenFlight == 1)
+                return numberofFlights[0].initialFlightCost;
+        else
+                return numberofFlights[1].initialFlightCost;
 }
 
-
-//currently displays all stored information
-void airPortDetails(){	
-    giveValuestoPath();
-    printf("Departure : %s\t\t", numberOfRoutes[0].departure);
-    printf("Arrival : %s\n\n", numberOfRoutes[0].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
-    delhi_mumbai();
-    printf("--------------------------------------------------------------------------\n");
-    printf("Departure : %s\t\t", numberOfRoutes[1].departure);
-    printf("Arrival : %s\n\n", numberOfRoutes[1].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
-    delhi_kolkata();
-    printf("--------------------------------------------------------------------------\n");
-    printf("Departure : %s\t\t", numberOfRoutes[2].departure);
-    printf("Arrival : %s\n\n", numberOfRoutes[2].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
-    delhi_bangalore();
-    printf("--------------------------------------------------------------------------\n");
-    printf("Departure : %s\t\t", numberOfRoutes[3].departure);
-    printf("Arrival : %s\n\n", numberOfRoutes[3].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
-    delhi_chennai();
-    printf("--------------------------------------------------------------------------\n");
-    printf("Departure : %s\t\t", numberOfRoutes[4].departure);
-    printf("Arrival : %s\n\n", numberOfRoutes[4].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
-	mumbai_delhi();
-	printf("--------------------------------------------------------------------------\n");
-	printf("Departure : %s\t\t", numberOfRoutes[5].departure);
-    printf("Arrival : %s\n\n", numberOfRoutes[5].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
-	mumbai_kolkata();
-	printf("--------------------------------------------------------------------------\n");
-	printf("Departure : %s\t\t", numberOfRoutes[6].departure);
-    printf("Arrival : %s\n\n", numberOfRoutes[6].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
-	mumbai_bangalore();
-	printf("--------------------------------------------------------------------------\n");
-	printf("Departure : %s\t\t", numberOfRoutes[7].departure);
-    printf("Arrival : %s\n\n", numberOfRoutes[7].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
-	mumbai_chennai();
-	printf("--------------------------------------------------------------------------\n");
-
-        printf("Departure : %s\t\t", numberOfRoutes[8].departure);
-    printf("Arrival : %s\n\n", numberOfRoutes[8].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
-	chennai_banglore();
-	printf("--------------------------------------------------------------------------\n");
-
-        printf("Departure : %s\t\t", numberOfRoutes[9].departure);
-    printf("Arrival : %s\n\n", numberOfRoutes[9].arrival); //using %0.3s here becuse the program was picking up ambigous values if not used
-	chennai_mumbai();
-	printf("--------------------------------------------------------------------------\n");
-}
 
 // Function to print the flight details
 void printFlightDetails(struct FlightDetails *flghtDetail){
+    printf("-----------------------------------------------------------------------------------\n");
+    printf("-----------------------------------------------------------------------------------\n");
     printf("Airline : %s\t\t\t", flghtDetail->company);
     printf("Flight Code : %s\n", flghtDetail->flightCode);
     printf("Departure : %s\t", flghtDetail->departurTime);
     printf("Arrival : %s\t\t", flghtDetail->arrivalTime);
     printf("Flight Duration : %s\n", flghtDetail->flightDuration);
     printf("\t\t\tCost : %0.2f\n\n", flghtDetail->initialFlightCost);
+}
+
+
+
+// Function to print the Route Details only
+void print_routeDetails(){
+        giveValuestoPath();
+        for(int i = 0; i<MAXROUTES; i++){
+                printf("%d  ",i+1);
+                printf("Departure: %s\t\t",numberOfRoutes[i].departure);
+                printf("Arrival : %s\n", numberOfRoutes[i].arrival);
+                printf("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n");
+        }
+        int option;
+        printf("Enter the Route : \n");
+        scanf("%d",&option);
+
+        switch(option){
+                case 1: price = delhi_mumbai();
+                break;
+                case 2: price = delhi_kolkata();
+                break;
+                case 3: price = delhi_bangalore();
+                break;
+                case 4: price = delhi_chennai();
+                break;
+                case 5: price = mumbai_delhi();
+                break;
+                case 6: price = mumbai_kolkata();
+                break;
+                case 7: price = mumbai_bangalore();
+                break;
+                case 8: price = mumbai_chennai();
+                break;
+                case 9: price = chennai_banglore();
+                break;
+                case 10: price = chennai_mumbai();
+                break;
+        }
+
+        printf("%0.2f", price);
+        price = price*passengerCost();
+        price = price + (float)food_option();
+        printf("%0.2f", price);
+        price = price + (float)add_luggage();
+        printf("%0.2f\n", price);
+        seatStatus();
+        updateSeat(quantityofPassenger());
+        seatStatus();
 }
