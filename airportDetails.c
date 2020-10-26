@@ -621,7 +621,9 @@ void print_routeDetails(){
 				        price = price + (float)add_luggage();
 				        printf("%0.2f\n", price);
 				        seatDisplay(temp);
+				        bookSeats(&temp);
 				        updateSeat(&temp);
+				        seatDisplay(temp);
 				        seatStatus(temp);
                 break;
                 case 3: temp = delhi_bangalore();
@@ -633,7 +635,9 @@ void print_routeDetails(){
 				        price = price + (float)add_luggage();
 				        printf("%0.2f\n", price);
 				        seatDisplay(temp);
+				        bookSeats(&temp);
 				        updateSeat(&temp);
+				        seatDisplay(temp);
 				        seatStatus(temp);
                 break;
                 case 4: temp = delhi_chennai();
@@ -645,7 +649,9 @@ void print_routeDetails(){
 				        price = price + (float)add_luggage();
 				        printf("%0.2f\n", price);
 				        seatDisplay(temp);
+				        bookSeats(&temp);
 				        updateSeat(&temp);
+				        seatDisplay(temp);
 				        seatStatus(temp);
                 break;
                 case 5: temp = mumbai_delhi();
@@ -657,7 +663,9 @@ void print_routeDetails(){
 				        price = price + (float)add_luggage();
 				        printf("%0.2f\n", price);
 				        seatDisplay(temp);
+				        bookSeats(&temp);
 				        updateSeat(&temp);
+				        seatDisplay(temp);
 				        seatStatus(temp);
                 break;
                 case 6: temp = mumbai_kolkata();
@@ -669,7 +677,9 @@ void print_routeDetails(){
 				        price = price + (float)add_luggage();
 				        printf("%0.2f\n", price);
 				        seatDisplay(temp);
+				        bookSeats(&temp);
 				        updateSeat(&temp);
+				        seatDisplay(temp);
 				        seatStatus(temp);
                 break;
                 case 7: temp = mumbai_bangalore();
@@ -681,7 +691,9 @@ void print_routeDetails(){
 				        price = price + (float)add_luggage();
 				        printf("%0.2f\n", price);
 				        seatDisplay(temp);
+				        bookSeats(&temp);
 				        updateSeat(&temp);
+				        seatDisplay(temp);
 				        seatStatus(temp);
                 break;
                 case 8: temp = mumbai_chennai();
@@ -693,7 +705,9 @@ void print_routeDetails(){
 				        price = price + (float)add_luggage();
 				        printf("%0.2f\n", price);
 				        seatDisplay(temp);
+				        bookSeats(&temp);
 				        updateSeat(&temp);
+				        seatDisplay(temp);
 				        seatStatus(temp);
                 break;
                 case 9: temp = chennai_banglore();
@@ -705,7 +719,9 @@ void print_routeDetails(){
 				        price = price + (float)add_luggage();
 				        printf("%0.2f\n", price);
 				        seatDisplay(temp);
+				        bookSeats(&temp);
 				        updateSeat(&temp);
+				        seatDisplay(temp);
 				        seatStatus(temp);
                 break;
                 case 10: temp = chennai_mumbai();
@@ -717,7 +733,9 @@ void print_routeDetails(){
 				        price = price + (float)add_luggage();
 				        printf("%0.2f\n", price);
 				        seatDisplay(temp);
+				        bookSeats(&temp);
 				        updateSeat(&temp);
+				        seatDisplay(temp);
 				        seatStatus(temp);
                 break;
         }
