@@ -4,7 +4,7 @@ int numberofPassenger = 0;
 // To get number of passenger travelling but with added discount
 float passengerCost(){
 	float adult, child, infant;
-	printf("Enter number of adults : ");
+	printf("\nEnter number of adults : ");
 	scanf("%f",&adult);
 	printf("Enter number of children aged below 12 : ");
 	scanf("%f",&child);
