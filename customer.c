@@ -80,7 +80,7 @@ void loginCheck(){
             if(strcmp(password, checkUser) == 0){
                 printf("\n----------   Logged In   --------\n");
                 flag = 1;
-                print_routeDetails();
+                onlyShowRoute();
             }
             else{
                 printf("Password Did Not match.....\n");

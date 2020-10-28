@@ -4,8 +4,6 @@
 #include "customer.c"
 
 int main(){
-    //airPortDetails();
-    // printf("Amount added to ticket:%d\n",food_option());
     loginOrRegister();
     return 0;
 }

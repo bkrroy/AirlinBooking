@@ -528,6 +528,8 @@ void printFlightDetails(struct FlightDetails *flghtDetail){
     printf("Flight Duration : %s\n", flghtDetail->flightDuration);
     printf("\t\t\tCost : %0.2f\n\n", flghtDetail->initialFlightCost);
 }
+
+
 void seatDisplay(struct FlightDetails temp){
     printf("     A B C    D E F\n\n");
     for(int i=0;i<18;i++){
@@ -584,6 +586,23 @@ void updateSeat(struct FlightDetails *temp){
     
 }
 
+// Function to call food and luggage function
+void call_food_and_luggage(){
+       price = price + (float)food_option();
+        printf("\t\tCurrent Price : %0.2f\n", price);
+        price = price + (float)add_luggage();
+        printf("\t\tCurrent Price : %0.2f\n", price); 
+}
+
+// Function to call the seat displaying program
+void call_seats(struct FlightDetails temp){
+        seatDisplay(temp);
+        bookSeats(&temp);
+        updateSeat(&temp);
+        seatDisplay(temp);
+        seatStatus(temp);       
+}
+
 // Function to print the Route Details only
 void print_routeDetails(){
         giveValuestoPath();
@@ -602,143 +621,107 @@ void print_routeDetails(){
                 		price=temp.initialFlightCost;
                 		printf("%0.2f\n", price);
 				        price = price*passengerCost();
-				        price = price + (float)food_option();
-				        printf("%0.2f\n", price);
-				        price = price + (float)add_luggage();
-				        printf("%0.2f\n", price);
-				        seatDisplay(temp);
-				        bookSeats(&temp);
-				        updateSeat(&temp);
-				        seatDisplay(temp);
-				        seatStatus(temp);
+                                        call_food_and_luggage();
+                                        call_seats(temp);
                 break;
                 case 2: temp = delhi_kolkata();
                 		price=temp.initialFlightCost;
                 		printf("%0.2f\n", price);
 				        price = price*passengerCost();
-				        price = price + (float)food_option();
-				        printf("%0.2f\n", price);
-				        price = price + (float)add_luggage();
-				        printf("%0.2f\n", price);
-				        seatDisplay(temp);
-				        bookSeats(&temp);
-				        updateSeat(&temp);
-				        seatDisplay(temp);
-				        seatStatus(temp);
+				        call_food_and_luggage();
+				        call_seats(temp);
                 break;
                 case 3: temp = delhi_bangalore();
                 		price=temp.initialFlightCost;
                 		printf("%0.2f\n", price);
 				        price = price*passengerCost();
-				        price = price + (float)food_option();
-				        printf("%0.2f\n", price);
-				        price = price + (float)add_luggage();
-				        printf("%0.2f\n", price);
-				        seatDisplay(temp);
-				        bookSeats(&temp);
-				        updateSeat(&temp);
-				        seatDisplay(temp);
-				        seatStatus(temp);
+				        call_food_and_luggage();
+				        call_seats(temp);
                 break;
                 case 4: temp = delhi_chennai();
                 		price=temp.initialFlightCost;
                 		printf("%0.2f\n", price);
 				        price = price*passengerCost();
-				        price = price + (float)food_option();
-				        printf("%0.2f\n", price);
-				        price = price + (float)add_luggage();
-				        printf("%0.2f\n", price);
-				        seatDisplay(temp);
-				        bookSeats(&temp);
-				        updateSeat(&temp);
-				        seatDisplay(temp);
-				        seatStatus(temp);
+				        call_food_and_luggage();
+				        call_seats(temp);
                 break;
                 case 5: temp = mumbai_delhi();
                 		price=temp.initialFlightCost;
                 		printf("%0.2f\n", price);
 				        price = price*passengerCost();
-				        price = price + (float)food_option();
-				        printf("%0.2f\n", price);
-				        price = price + (float)add_luggage();
-				        printf("%0.2f\n", price);
-				        seatDisplay(temp);
-				        bookSeats(&temp);
-				        updateSeat(&temp);
-				        seatDisplay(temp);
-				        seatStatus(temp);
+				        call_food_and_luggage();
+				        call_seats(temp);
                 break;
                 case 6: temp = mumbai_kolkata();
                 		price=temp.initialFlightCost;
                 		printf("%0.2f\n", price);
 				        price = price*passengerCost();
-				        price = price + (float)food_option();
-				        printf("%0.2f\n", price);
-				        price = price + (float)add_luggage();
-				        printf("%0.2f\n", price);
-				        seatDisplay(temp);
-				        bookSeats(&temp);
-				        updateSeat(&temp);
-				        seatDisplay(temp);
-				        seatStatus(temp);
+				        call_food_and_luggage();
+				        call_seats(temp);
                 break;
                 case 7: temp = mumbai_bangalore();
                 		price=temp.initialFlightCost;
                 		printf("%0.2f\n", price);
 				        price = price*passengerCost();
-				        price = price + (float)food_option();
-				        printf("%0.2f\n", price);
-				        price = price + (float)add_luggage();
-				        printf("%0.2f\n", price);
-				        seatDisplay(temp);
-				        bookSeats(&temp);
-				        updateSeat(&temp);
-				        seatDisplay(temp);
-				        seatStatus(temp);
+				        call_food_and_luggage();
+				        call_seats(temp);
                 break;
                 case 8: temp = mumbai_chennai();
                 		price=temp.initialFlightCost;
                 		printf("%0.2f\n", price);
 				        price = price*passengerCost();
-				        price = price + (float)food_option();
-				        printf("%0.2f\n", price);
-				        price = price + (float)add_luggage();
-				        printf("%0.2f\n", price);
-				        seatDisplay(temp);
-				        bookSeats(&temp);
-				        updateSeat(&temp);
-				        seatDisplay(temp);
-				        seatStatus(temp);
+				        call_food_and_luggage();
+				        call_seats(temp);
                 break;
                 case 9: temp = chennai_banglore();
                 		price=temp.initialFlightCost;
                 		printf("%0.2f\n", price);
 				        price = price*passengerCost();
-				        price = price + (float)food_option();
-				        printf("%0.2f\n", price);
-				        price = price + (float)add_luggage();
-				        printf("%0.2f\n", price);
-				        seatDisplay(temp);
-				        bookSeats(&temp);
-				        updateSeat(&temp);
-				        seatDisplay(temp);
-				        seatStatus(temp);
+				        call_food_and_luggage();
+				        call_seats(temp);
                 break;
                 case 10: temp = chennai_mumbai();
                 		price=temp.initialFlightCost;
                 		printf("%0.2f\n", price);
 				        price = price*passengerCost();
-				        price = price + (float)food_option();
-				        printf("%0.2f\n", price);
-				        price = price + (float)add_luggage();
-				        printf("%0.2f\n", price);
-				        seatDisplay(temp);
-				        bookSeats(&temp);
-				        updateSeat(&temp);
-				        seatDisplay(temp);
-				        seatStatus(temp);
+				        call_food_and_luggage();
+				        call_seats(temp);
                 break;
         }
-
         
+        printf("***************    Seat(s) Booked   ***************\n");
+        printf("******    THANK YOU FOR USING OUR SERVICES ********\n");
+}
+
+
+
+// Menu driven function
+void onlyShowRoute(){
+        int opt;
+        printf("\nEnter 1. To Display Routes\n");
+        printf("Enter 2. To Book Tickets\n");
+        printf("Enter 3. To exit\n");
+        printf("Enter Option : ");
+        scanf("%d",&opt);
+
+        if(opt == 1){
+                giveValuestoPath();
+                for(int i = 0; i<MAXROUTES; i++){
+                        printf("%d  ",i+1);
+                        printf("Departure: %s\t\t",numberOfRoutes[i].departure);
+                        printf("Arrival : %s\n", numberOfRoutes[i].arrival);
+                        printf("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n");
+                }
+                onlyShowRoute();
+        }
+        else if(opt == 2){
+                print_routeDetails();
+        }
+        else if(opt == 3){
+                printf("\n\t\t........Thank you For Using our Portal........");
+        }
+        else{
+                printf("Enter Valid Option......\n");
+                onlyShowRoute();
+        }
 }
