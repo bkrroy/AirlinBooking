@@ -12,7 +12,7 @@
 
 ### Airports 
 * Deparutre and Arrival Times
-* Hard coding to be done by us
+- [ ] Hard coding to be done by us
 
 ### Flights 
 * Nonstop or would Land somewhere
